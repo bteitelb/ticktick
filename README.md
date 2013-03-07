@@ -15,6 +15,7 @@ Count down starting at 3 minutes using default time format 'm:ss'.
 
 ```javascript
 $('span.countdown').ticktick({duration: [3, 'minutes']});
+```
 
 Count down three and a half minutes.  Note the use of the object-based duration specification from Moment.js.
 
