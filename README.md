@@ -29,7 +29,7 @@ Count down from 3 minutes using a custom time format.  Any format that works in 
 $('span.countdown').ticktick({format: 'm [minutes] ss [seconds]', duration: [3, 'minutes']});
 ```
 
-You can even use HTML in your formats (and, of course, style them arbitrarily with CSS).
+You can even use HTML in your formats (and, of course, you can style them arbitrarily with CSS).
 
 ```javascript
 $('span.countdown').ticktick({format: 'h:[<strong>]mm[</strong>]:ss', duration: [3, 'minutes']});
