@@ -37,7 +37,7 @@
          } else {
            var display_moment = moment.utc(moment.duration(orig_duration - duration).asMilliseconds());          
          }
-         $(_this).text(display_moment.format(settings['format']));
+         $(_this).html(display_moment.format(settings['format']));
          if (new_duration <= 0) {
            clearInterval(timer);
            if (typeof settings['onDone'] === 'function') {
