@@ -29,7 +29,10 @@
        } else {
          var duration = orig_duration = moment.duration(settings['duration']);
        }
-       var timer = setInterval(function(){
+       if (this.ticktick_timer) {
+         clearInterval(this.ticktick_timer);
+       }
+       this.ticktick_timer = setInterval(function(){
          var new_duration = duration.asMilliseconds() - settings['interval'];
          duration = moment.duration(new_duration, 'milliseconds');
          if (settings['direction'] == 'down') {
@@ -39,7 +42,7 @@
          }
          $(_this).html(display_moment.format(settings['format']));
          if (new_duration <= 0) {
-           clearInterval(timer);
+           clearInterval(_this.ticktick_timer);
            if (typeof settings['onDone'] === 'function') {
              settings['onDone'].call();
            }
@@ -48,4 +51,3 @@
      });
    };
  })( jQuery );
- 
